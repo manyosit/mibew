@@ -22,3 +22,18 @@ Sample docker-compose.yml
       - MYSQL_RANDOM_ROOT_PASSWORD=yes
     volumes:
       - ./db:/var/lib/mysql
+
+
+A `docker-compose.yml` looks like this:
+
+    version: '2'
+
+    services:
+      web:
+        build: .
+        ports:
+         - "5000:5000"
+        volumes:
+         - .:/code
+      redis:
+        image: redis
